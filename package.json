@@ -1,0 +1,25 @@
+{
+  "name": "youtube-api",
+  "version": "1.0.0",
+  "description": "## Unit 3 Group Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carol-en/youtube-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carol-en/youtube-api/issues"
+  },
+  "homepage": "https://github.com/carol-en/youtube-api#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.8.3"
+  }
+}
