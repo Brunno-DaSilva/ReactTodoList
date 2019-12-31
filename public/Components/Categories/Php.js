@@ -1,32 +1,17 @@
 console.log("Ciao React Junkies");
 
-class App extends React.Component {
+class Php extends React.Component {
   state = {
     baseURL: "https://www.googleapis.com/youtube/v3/playlistItems?part=",
     part: "snippet" + "&",
     maxResults: "maxResults=5" + "&",
-    playlistId: "playlistId=" + "PLWKjhJtqVAblv09G3sFgRMSeR0jnKQmJ9",
+    playlistId: "playlistId=" + "PLillGF-RfqbZ3_Xr8do7Q2R752xYrDRAo",
     apikey: "&key=" + "AIzaSyCIETFoL5hBS644jAwQ7vx_79ogETBt4nE",
     videoIds: [],
     finalURL: ""
   };
 
-  //******  PlayListIDs *******/
-  //Full URL
-  //https://www.googleapis.com/youtube/v3/playlistItems?part=snippet
-  //&maxResults=5&playlistId=PLillGF-RfqbZTASqIqdvm1R5mLrQq79CU&key=[YOUR_API_KEY] HTTP/1.1
-
-  // HTML&CSS  = PLillGF-RfqbZTASqIqdvm1R5mLrQq79CU
-  // React Js = PLillGF-RfqbaevC84ezBcmlfR54H9RaUr
-  // JavaScript = PLillGF-RfqbbnEGy3ROiLWk7JMCuSyQtX
-  // jQuery = PLillGF-RfqbYJVXBgZ_nA7FTAAEpp_IAc
-  // Node = PLillGF-RfqbZ2ybcoD2OaabW2P7Ws8CWu
-  //Mern Stack = PLillGF-RfqbbiTGgA77tGO426V3hRF9iE
-  // Python = PLillGF-RfqbbJYRaNqeUzAb7QY-IqBKRx
   // PHP = PLillGF-RfqbZ3_Xr8do7Q2R752xYrDRAo
-  // CodeInterview = PLWKjhJtqVAblv09G3sFgRMSeR0jnKQmJ9
-
-  //****** End -- PlayListIDs *******/
 
   handleChange = event => {
     this.setState({ [event.target.id]: event.target.value });
@@ -60,8 +45,6 @@ class App extends React.Component {
           });
       }
     );
-
-    console.log("BTN Has been Clicked");
   };
 
   render() {
@@ -69,38 +52,10 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <div>
-          <h2>Learning Center</h2>
+          <button className="cards" onClick={this.handleClick}>
+            PHP
+          </button>
         </div>
-        <div className="cards-container">
-          <div>
-            <HtmlCss />
-          </div>
-
-          <div>
-            <JavaScript />
-          </div>
-
-          <div>
-            <JQqueryPlayList />
-          </div>
-
-          <div>
-            <ReactPlayList />
-          </div>
-          <div>
-            <Node />
-          </div>
-          <div>
-            <Php />
-          </div>
-          <div>
-            <Python />
-          </div>
-          <div>
-            <CodeInterview />
-          </div>
-        </div>
-
         <div>
           {this.state.videoIds.map((link, index) => {
             let frame = (

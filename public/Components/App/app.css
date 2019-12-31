@@ -25,11 +25,10 @@ body {
 }
 
 .container {
-  margin: 5%;
   height: 100%;
   min-height: 120%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   align-content: center;
@@ -44,8 +43,15 @@ h2 {
   letter-spacing: 15px;
 }
 
-button {
-  background-color: #f0db4f;
+.cards-container {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.cards {
+  background-color: #edf0f0;
   border: none;
   color: #323330;
   text-decoration: none;
@@ -53,69 +59,17 @@ button {
   cursor: pointer;
   border-radius: 5px;
   margin-left: 10%;
-  width: 400px;
-  height: 400px;
-  font-size: 4rem;
+  width: 350px;
+  height: 200px;
+  font-size: 1.5rem;
   text-align: center;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-button:hover {
+.cards:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
-
-.react {
-  background-color: #4dd6f8;
-  border: none;
-  color: #323330;
-  text-decoration: none;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-left: 10%;
-  width: 400px;
-  height: 400px;
-  font-size: 4rem;
-  text-align: center;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.htmlCss {
-  background-color: #f16529;
-  border: none;
-  color: #ffffff;
-  text-decoration: none;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-left: 10%;
-  width: 400px;
-  height: 400px;
-  font-size: 4rem;
-  text-align: center;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.nodeJS {
-  background-color: #3c873a;
-  border: none;
-  color: #ffffff;
-  text-decoration: none;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-left: 10%;
-  width: 400px;
-  height: 400px;
-  font-size: 4rem;
-  text-align: center;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
 .search-box {
   display: flex;
   width: 450px;
