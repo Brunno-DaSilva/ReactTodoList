@@ -5,17 +5,14 @@ class Header extends React.Component {
     return (
       <div>
         <nav className="nav-bar">
-          {/* <NavLink className="nav-bar" to="/">
-            Home
-          </NavLink> */}
           <NavLink className="nav-bar" to="/youtubeList">
             YouTube List
           </NavLink>
           <NavLink className="nav-bar" to="/about">
-            Contact
+            About
           </NavLink>
           <NavLink className="nav-bar" to="/contact">
-            About
+            Contact
           </NavLink>
         </nav>
         <br />

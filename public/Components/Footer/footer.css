@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+/* https://coolors.co/124e78-0b132b-1c2541-5bc0be-6fffe9 */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+.footer-info {
+  background-color: #383838;
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center !important;
+  align-items: center;
+  align-content: center;
+  overflow: hidden;
+}
+
+.info-Carol,
+.info-Bruno,
+.info-John {
+  width: 33%;
+  padding: 20px;
+  text-align: center;
+}
+.info-Carol,
+.info-Bruno {
+  border-right: 2px solid gray;
+}
+.info-Carol p,
+.info-Bruno p,
+.info-John p {
+  color: white;
+  font-size: 1.8rem;
+  padding: 10px;
+}
+
+.info-Carol a,
+.info-Bruno a,
+.info-John a {
+  color: #f3f2f2;
+  padding: 10px;
+}
+
+.info-Carol a:hover,
+.info-Bruno a:hover,
+.info-John a:hover {
+  color: #dfc532;
+}
