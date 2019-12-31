@@ -2,14 +2,31 @@ console.log("Ciao React Junkies");
 
 class App extends React.Component {
   state = {
-    baseURL:
-      "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=",
-    channelId: "UC29ju8bIPH5as8OGnQzwJyA" + "&",
-    maxResults: "maxResults=" + 5 + "&",
-    apikey: "key=" + "AIzaSyCIETFoL5hBS644jAwQ7vx_79ogETBt4nE",
-    videoId: [],
+    baseURL: "https://www.googleapis.com/youtube/v3/playlistItems?part=",
+    part: "snippet" + "&",
+    maxResults: "maxResults=5" + "&",
+    playlistId: "playlistId=" + "PLWKjhJtqVAblv09G3sFgRMSeR0jnKQmJ9",
+    apikey: "&key=" + "AIzaSyCIETFoL5hBS644jAwQ7vx_79ogETBt4nE",
+    videoIds: [],
     finalURL: ""
   };
+
+  //******  PlayListIDs *******/
+  //Full URL
+  //https://www.googleapis.com/youtube/v3/playlistItems?part=snippet
+  //&maxResults=5&playlistId=PLillGF-RfqbZTASqIqdvm1R5mLrQq79CU&key=[YOUR_API_KEY] HTTP/1.1
+
+  // HTML&CSS  = PLillGF-RfqbZTASqIqdvm1R5mLrQq79CU
+  // React Js = PLillGF-RfqbaevC84ezBcmlfR54H9RaUr
+  // JavaScript = PLillGF-RfqbbnEGy3ROiLWk7JMCuSyQtX
+  // jQuery = PLillGF-RfqbYJVXBgZ_nA7FTAAEpp_IAc
+  // Node = PLillGF-RfqbZ2ybcoD2OaabW2P7Ws8CWu
+  //Mern Stack = PLillGF-RfqbbiTGgA77tGO426V3hRF9iE
+  // Python = PLillGF-RfqbbJYRaNqeUzAb7QY-IqBKRx
+  // PHP = PLillGF-RfqbZ3_Xr8do7Q2R752xYrDRAo
+  // CodeInterview = PLWKjhJtqVAblv09G3sFgRMSeR0jnKQmJ9
+
+  //****** End -- PlayListIDs *******/
 
   handleChange = event => {
     this.setState({ [event.target.id]: event.target.value });
@@ -21,8 +38,9 @@ class App extends React.Component {
       {
         finalURL:
           this.state.baseURL +
-          this.state.channelId +
+          this.state.part +
           this.state.maxResults +
+          this.state.playlistId +
           this.state.apikey
       },
       () => {
@@ -30,10 +48,12 @@ class App extends React.Component {
           .then(response => response.json())
           .then(responseJson => {
             console.log(responseJson);
-            const videoId = responseJson.items.map(
-              obj => "https://www.youtube.com/embed/" + obj.id.videoId
+            const videoIds = responseJson.items.map(
+              obj =>
+                "https://www.youtube.com/embed/" +
+                obj.snippet.resourceId.videoId
             );
-            this.setState({ videoId });
+            this.setState({ videoIds });
           })
           .catch(error => {
             console.error(error);
@@ -45,7 +65,7 @@ class App extends React.Component {
   };
 
   render() {
-    console.log(this.state.videoId);
+    console.log(this.state.videoIds);
     return (
       <React.Fragment>
         <div>
@@ -73,13 +93,13 @@ class App extends React.Component {
           </button>
         </div>
         <div>
-          {this.state.videoId.map((links, index) => {
+          {this.state.videoIds.map((link, index) => {
             let frame = (
               <div>
                 <iframe
                   width="560"
                   height="315"
-                  src={links}
+                  src={link}
                   frameborder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen

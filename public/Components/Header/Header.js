@@ -5,9 +5,9 @@ class Header extends React.Component {
     return (
       <div>
         <nav className="nav-bar">
-          <NavLink className="nav-bar" to="/">
+          {/* <NavLink className="nav-bar" to="/">
             Home
-          </NavLink>
+          </NavLink> */}
           <NavLink className="nav-bar" to="/youtubeList">
             YouTube List
           </NavLink>

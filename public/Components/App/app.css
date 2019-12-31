@@ -1,0 +1,137 @@
+/*Style CSS*/
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+/* https://coolors.co/124e78-0b132b-1c2541-5bc0be-6fffe9 */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --light-yellow-bg: #fbe8b3;
+  --dark-blue: #264caa;
+  --yankees-blue: #58aae7;
+  --sea-serpent: #8cd6f4;
+  --aquamarine: #c1ecf8;
+  --react: #dde9f7;
+  --white-bg: #fcfcfc;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: var(--white-bg);
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  margin: 5%;
+  height: 100%;
+  min-height: 120%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+h2 {
+  color: var(--yankees-blue);
+  margin-bottom: 10%;
+  font-size: 5.1rem;
+  font-weight: 600;
+  letter-spacing: 15px;
+}
+
+button {
+  background-color: #f0db4f;
+  border: none;
+  color: #323330;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 10%;
+  width: 400px;
+  height: 400px;
+  font-size: 4rem;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+button:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.react {
+  background-color: #4dd6f8;
+  border: none;
+  color: #323330;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 10%;
+  width: 400px;
+  height: 400px;
+  font-size: 4rem;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.htmlCss {
+  background-color: #f16529;
+  border: none;
+  color: #ffffff;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 10%;
+  width: 400px;
+  height: 400px;
+  font-size: 4rem;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.nodeJS {
+  background-color: #3c873a;
+  border: none;
+  color: #ffffff;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 10%;
+  width: 400px;
+  height: 400px;
+  font-size: 4rem;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.search-box {
+  display: flex;
+  width: 450px;
+  border: none;
+  position: relative;
+  height: 60px;
+  background: var(--dark-blue);
+  border-radius: 5px;
+  box-shadow: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: text;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+}
