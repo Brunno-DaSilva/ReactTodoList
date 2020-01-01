@@ -1,6 +1,6 @@
 console.log("Ciao React Junkies");
 
-class JQqueryPlayList extends React.Component {
+class JQueryPlayList extends React.Component {
   state = {
     baseURL: "https://www.googleapis.com/youtube/v3/playlistItems?part=",
     part: "snippet" + "&",

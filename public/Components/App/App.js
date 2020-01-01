@@ -11,94 +11,39 @@ class App extends React.Component {
     finalURL: ""
   };
 
-  //******  PlayListIDs *******/
-  //Full URL
-  //https://www.googleapis.com/youtube/v3/playlistItems?part=snippet
-  //&maxResults=5&playlistId=PLillGF-RfqbZTASqIqdvm1R5mLrQq79CU&key=[YOUR_API_KEY] HTTP/1.1
-
-  // HTML&CSS  = PLillGF-RfqbZTASqIqdvm1R5mLrQq79CU
-  // React Js = PLillGF-RfqbaevC84ezBcmlfR54H9RaUr
-  // JavaScript = PLillGF-RfqbbnEGy3ROiLWk7JMCuSyQtX
-  // jQuery = PLillGF-RfqbYJVXBgZ_nA7FTAAEpp_IAc
-  // Node = PLillGF-RfqbZ2ybcoD2OaabW2P7Ws8CWu
-  //Mern Stack = PLillGF-RfqbbiTGgA77tGO426V3hRF9iE
-  // Python = PLillGF-RfqbbJYRaNqeUzAb7QY-IqBKRx
-  // PHP = PLillGF-RfqbZ3_Xr8do7Q2R752xYrDRAo
-  // CodeInterview = PLWKjhJtqVAblv09G3sFgRMSeR0jnKQmJ9
-
-  //****** End -- PlayListIDs *******/
-
-  handleChange = event => {
-    this.setState({ [event.target.id]: event.target.value });
-  };
-
-  handleClick = event => {
-    event.preventDefault();
-    this.setState(
-      {
-        finalURL:
-          this.state.baseURL +
-          this.state.part +
-          this.state.maxResults +
-          this.state.playlistId +
-          this.state.apikey
-      },
-      () => {
-        fetch(this.state.finalURL)
-          .then(response => response.json())
-          .then(responseJson => {
-            console.log(responseJson);
-            const videoIds = responseJson.items.map(
-              obj =>
-                "https://www.youtube.com/embed/" +
-                obj.snippet.resourceId.videoId
-            );
-            this.setState({ videoIds });
-          })
-          .catch(error => {
-            console.error(error);
-          });
-      }
-    );
-
-    console.log("BTN Has been Clicked");
-  };
-
   render() {
-    console.log(this.state.videoIds);
     return (
       <React.Fragment>
         <div>
-          <h2>Learning Center</h2>
-        </div>
-        <div className="cards-container">
-          <div>
-            <HtmlCss />
-          </div>
+          <div className="cards-container">
+            <NavLink className="cards" to="/htmlCss">
+              HTML & CSS
+            </NavLink>
 
-          <div>
-            <JavaScript />
-          </div>
+            <NavLink className="cards" to="/javaScript">
+              JavaScript
+            </NavLink>
 
-          <div>
-            <JQqueryPlayList />
+            <NavLink className="cards" to="/reactPlayList">
+              React
+            </NavLink>
+            <NavLink className="cards" to="/jQueryPlayList">
+              jQuery
+            </NavLink>
+            <NavLink className="cards" to="/node">
+              Node
+            </NavLink>
+            <NavLink className="cards" to="/phpList">
+              PHP
+            </NavLink>
+            <NavLink className="cards" to="/python">
+              Python
+            </NavLink>
+            <NavLink className="cards" to="/codeInterview">
+              Code Interview
+            </NavLink>
           </div>
-
-          <div>
-            <ReactPlayList />
-          </div>
-          <div>
-            <Node />
-          </div>
-          <div>
-            <Php />
-          </div>
-          <div>
-            <Python />
-          </div>
-          <div>
-            <CodeInterview />
-          </div>
+          <br />
         </div>
 
         <div>

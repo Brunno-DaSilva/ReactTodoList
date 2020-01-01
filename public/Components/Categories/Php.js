@@ -19,6 +19,7 @@ class Php extends React.Component {
 
   handleClick = event => {
     event.preventDefault();
+
     this.setState(
       {
         finalURL:
