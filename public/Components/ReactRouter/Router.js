@@ -7,7 +7,7 @@ class YouTubeRouter extends React.Component {
       <HashRouter history={browserHistory}>
         <Header />
 
-        {/* Main Components Routes */}
+        {/* Main Components Routers */}
         <Route path="/youtubeList" component={App} />
         <Route path="/about" component={About} />
 
