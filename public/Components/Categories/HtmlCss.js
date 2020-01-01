@@ -8,7 +8,8 @@ class HtmlCss extends React.Component {
     playlistId: "playlistId=" + "PLillGF-RfqbZTASqIqdvm1R5mLrQq79CU",
     apikey: "&key=" + "AIzaSyCIETFoL5hBS644jAwQ7vx_79ogETBt4nE",
     videoIds: [],
-    finalURL: ""
+    finalURL: "",
+    commentID: "PLillGF-RfqbZTASqIqdvm1R5mLrQq79CU"
   };
 
   // HTML&CSS  = PLillGF-RfqbZTASqIqdvm1R5mLrQq79CU
@@ -68,6 +69,7 @@ class HtmlCss extends React.Component {
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen
                 ></iframe>
+                <Comments commentsId={this.state.commentID} />
               </div>
             );
             return frame;

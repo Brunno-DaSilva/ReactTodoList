@@ -6,7 +6,6 @@ class YouTubeRouter extends React.Component {
     return (
       <HashRouter history={browserHistory}>
         <Header />
-
         {/* Main Components Routers */}
         <Route path="/youtubeList" component={App} />
         <Route path="/about" component={About} />
@@ -20,6 +19,7 @@ class YouTubeRouter extends React.Component {
         <Route path="/phpList" component={Php} />
         <Route path="/python" component={Python} />
         <Route path="/codeInterview" component={CodeInterview} />
+        <Route path="/comments" component={Comments} />
       </HashRouter>
     );
   }
