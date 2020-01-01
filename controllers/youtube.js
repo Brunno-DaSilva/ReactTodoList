@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-// const Youtube       = require("../models/youtube.js");
+const Youtube  = require("../models/youtube.js");
 
 // Index Route
 router.get("/", (req, res) => {
