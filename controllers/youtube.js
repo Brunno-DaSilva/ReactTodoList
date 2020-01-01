@@ -1,37 +1,37 @@
 const express = require("express");
 const router = express.Router();
-const Youtube  = require("../models/youtube.js");
+const YTComments  = require("../models/youtube.js");
 
 // Index Route
 router.get("/", (req, res) => {
   res.send("Index");
-  Youtube.find({}, (err, foundVideos) => {
+  YTComments.find({}, (err, foundComments) => {
     if (err) {
       res.send(err.message);
     } else {
-      res.json(foundVideos);
+      res.json(foundComments);
     }
   });
 });
 
 // Post Route
 router.post("/", (req, res) => {
-  Youtube.create(req.body, newVideo => {
-    res.json(newVideo);
+  YTComments.create(req.body, newComment => {
+    res.json(newComment);
   });
 });
 
 // Update Route
 router.put("/:id", (req, res) => {
-  Youtube.findByIdAndUpdate(
+  YTComments.findByIdAndUpdate(
     req.params.id,
     req.body,
     { new: true },
-    (err, updatedVideo) => {
+    (err, updatedComment) => {
       if (err) {
         res.send(err.message);
       } else {
-        res.json(updatedVideo);
+        res.json(updatedComment);
       }
     }
   );
@@ -39,11 +39,11 @@ router.put("/:id", (req, res) => {
 
 // Delete Route
 router.delete("/:id", (req, res) => {
-  Youtube.findByIdAndRemove(req.params.id, (err, deletedVideo) => {
+  YTComments.findByIdAndRemove(req.params.id, (err, deletedComment) => {
     if (err) {
       res.send(err.message);
     } else {
-      res.json(deletedVideo);
+      res.json(deletedComment);
     }
   });
 });
