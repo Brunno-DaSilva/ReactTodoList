@@ -1,18 +1,21 @@
 // console.log("Hello from comments!");
 
-class CommentEntry extends React.Component {
+class MainComment extends React.Component {
     render() {
         return (
-            <li>              
-                <form>
-                    <input type="submit" value="Edit" />
-                </form>
-                <button onClick={() => this.props.deleteComment(this.props.comment._id, this.props.index)}>Delete</button>
-                <h3>{this.props.comment.title}</h3>
-                <h4>{this.props.comment.date}</h4>
-                <h5>{this.props.comment.videoId}</h5>
-                <div>{this.props.comment.note}</div>
-            </li>
+            <ul>
+            {this.props.data.comments.map((comment, i) => {
+                return (
+                    <li>    
+                        <h1>{comment.title}</h1>
+                        <h4>{comment.date}</h4>
+                        <h5>{comment.videoId}</h5>
+                        <div>{comment.note}</div>
+                    </li>
+                )
+            })}
+        </ul>
+
         )
     }
 }
@@ -45,6 +48,30 @@ class NewEntryForm extends React.Component {
     }
 }
 
+class EditEntryForm extends React.Component {
+    render() {
+        return(
+            <form>
+                <div>
+                    <h3>Edit Entry</h3>
+                    <label htmlFor="title">Title</label>
+                    <input type="text" id="title" value="" />
+                </div>
+                <div>
+                    <label htmlFor="date">Date</label>
+                    <input type="date" id="date" value="" />
+                </div>
+                <div>
+                    <label htmlFor="body">Note:</label>
+                    <textarea id="body" value=""></textarea>
+                </div>
+                <div>
+                    <input type="submit" value="Edit Note" />
+                </div>
+            </form>
+        )
+    }
+}
 
 class Comments extends React.Component {
     state = {
@@ -52,7 +79,8 @@ class Comments extends React.Component {
         title: "",
         videoId: this.props.commentsId,
         date: "",
-        note: ""
+        note: "",
+        editing: false
     }
 
     componentDidMount() {
@@ -114,7 +142,14 @@ deleteComment = (id, index) => {
     });
 }
 
+toggleEditing = (comment, i) => {
+    this.setState({ editing: !this.state.editing });
+}
 
+updateComment = (comment, index) => {
+    comment.editing = !comment.editing;
+    console.log(comment.editing);
+}
     
     render() {
         return (
@@ -122,30 +157,14 @@ deleteComment = (id, index) => {
                 <h3>Comments</h3>
                 <h4>{this.state.videoId}</h4>
                 <NewEntryForm data={this.state} handleChange={this.handleChange}  handleSubmit={this.handleSubmit} />
-                {/* <form>
-                    <div>
-                        <label htmlFor="title">Title</label>
-                        <input type="text" id="title" value="" />
-                    </div>
-                    <div>
-                        <label htmlFor="date">Date</label>
-                        <input type="date" id="date" value="" />
-                    </div>
-                    <div>
-                        <label htmlFor="body">Note:</label>
-                        <textarea id="body" value=""></textarea>
-                    </div>
-                    <div>
-                        <input type="submit" value="Edit Note" />
-                    </div>
-                </form> */}
-                <ul>
-                    {this.state.comments.map((comment, i) => {
-                        return (
-                            <CommentEntry  comment={comment} index={i} deleteComment={this.deleteComment}/>
-                        )
-                    })}
-                </ul>
+
+
+                {/* <EditEntryForm /> */}
+                {/* <MainComment data={this.state} deleteComment={this.deleteComment}  toggleEditing={this.toggleEditing}/> */}
+
+                <button onClick={this.toggleEditing}>Edit</button>
+                        {this.state.editing ? <EditEntryForm /> : <MainComment  data={this.state}/>}
+
             </React.Fragment>
         )
     }
