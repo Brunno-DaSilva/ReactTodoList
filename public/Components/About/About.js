@@ -5,6 +5,15 @@ class About extends React.Component {
     return (
       <div>
         <h1>About this App</h1>
+
+        <br />
+        <br />
+        <br />
+        <Notes />
+
+        <br />
+        <br />
+        <br />
       </div>
     );
   }
