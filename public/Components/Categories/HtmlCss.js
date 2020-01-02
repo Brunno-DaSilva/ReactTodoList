@@ -69,14 +69,14 @@ class HtmlCss extends React.Component {
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen
                 ></iframe>
-                <Comments commentsId={this.state.commentID} />
               </div>
             );
             return frame;
           })}
         </div>
 
-        <div>{this.frame}</div>
+        <div>{this.frame}
+        <Comments commentsId={this.state.commentID} /></div>
       </React.Fragment>
     );
   }

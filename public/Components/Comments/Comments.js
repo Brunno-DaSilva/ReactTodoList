@@ -1,16 +1,13 @@
 // console.log("Hello from comments!");
 
-class MainComment extends React.Component {
+class CommentBody extends React.Component {
     render() {
         return (
             <ul>
             {this.props.data.comments.map((comment, i) => {
                 return (
-                    <li>    
-                        <h1>{comment.title}</h1>
-                        <h4>{comment.date}</h4>
-                        <h5>{comment.videoId}</h5>
-                        <div>{comment.note}</div>
+                    <li>   
+                        <CommentContent data={comment} index={i} deleteComment={this.props.deleteComment} updateComment={this.props.updateComment} commentsId={this.props.commentsId}/>
                     </li>
                 )
             })}
@@ -20,25 +17,133 @@ class MainComment extends React.Component {
     }
 }
 
-class NewEntryForm extends React.Component {
+class CommentContent extends React.Component {
+    state = {
+        comments: this.props.data.comments
+    }
+    toggleEditing = (comment, index) => {
+        comment.editing = !comment.editing;
+        console.log(comment);
+        console.log(comment.editing);
+        fetch("/youtube/" + comment._id, {
+            body: JSON.stringify({editing: comment.editing}),
+                method: 'PUT',
+                headers: {
+                    Accept: 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json'
+                }
+        })
+        .then((updateComment) => updateComment.json())
+        .then((JComment) => {
+            fetch("/youtube").then((response) => response.json()).then((comments) => {
+                this.setState({
+                    comments: comments,
+                    editing: false
+                });
+            });
+        });
+    }
+
+    CommentEntry= () => {
+        if(this.props.data.videoId === this.props.commentsId) {
+            return (
+                <div>
+                    {!this.props.data.editing ? <CommentData comment={this.props.data}  commentsId={this.props.commentsId}/> : <EditEntryForm  data={this.props.data} index={this.props.index} commentsId={this.props.commentsId}/>}
+
+                    <button onClick={() => { {this.toggleEditing(this.props.data, this.props.index)} }}>{!this.props.data.editing ? "Edit" : "Cancel"}</button>
+                    <button onClick={() => { this.props.deleteComment(this.props.data._id, this.props.index)}}>Delete</button>
+                </div>
+            );
+        } else {
+            return "";
+        }
+    }
+
+    render() {
+        return (
+            <React.Fragment>
+                {this.CommentEntry()}
+            </React.Fragment>
+        )
+    }
+}
+
+class CommentData extends React.Component {
     render() {
         return(
-            <form onSubmit={this.props.handleSubmit}>
+            <React.Fragment>
+                    <h1>{this.props.comment.title}</h1>
+                    <h4>{this.props.comment.date}</h4>
+                    <div>{this.props.comment.note}</div>
+            </React.Fragment>
+        )
+    }
+}
+
+class NewEntryForm extends React.Component {
+    state = {
+        comments: this.props.data.comments,
+        title: this.props.data.title,
+        videoId: this.props.commentsId,
+        date: this.props.data.date,
+        note: this.props.data.note,
+    }
+
+    handleChange = (event) => {
+        let target = event.target;
+        let id = target.id;
+        let value = target.value;
+        this.setState({ [id]: value });
+    }
+    
+    handleSubmit = (event) => {
+        event.preventDefault();
+        fetch("/youtube", {
+            body: JSON.stringify({ 
+                title: this.state.title,
+                videoId: this.state.videoId,
+                date: this.state.date,
+                note: this.state.note,
+                commentsId: this.props.commentsId
+
+                }),
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then((createdComment) => {
+                return createdComment.json();
+            })
+            .then((comment) => {
+                this.setState({
+                    title: "",
+                    date: "",
+                    note: "",
+                    comments: [comment, ... this.state.comments]
+                });
+            })
+            .catch(error => console.log(error));
+    }
+    render() {
+        return(
+            <form onSubmit={this.handleSubmit}>
                 <div>
                     <label htmlFor="title">Title</label>
-                    <input type="text" id="title" value={this.props.data.title}  onChange={this.props.handleChange} required />
+                    <input type="text" id="title" value={this.state.title}  onChange={this.handleChange} required />
                 </div>
                 <div>
                     <label htmlFor="videoId" />
-                    <input type="hidden" id="videoId" value={this.props.data.videoId} />
+                    <input type="hidden" id="videoId" value={this.state.videoId} />
                 </div>
                 <div>
                     <label htmlFor="date">Date</label>
-                    <input type="date" id="date" value={this.props.data.date}  onChange={this.props.handleChange} required />
+                    <input type="date" id="date" value={this.state.date}  onChange={this.handleChange} required />
                 </div>
                 <div>
                     <label htmlFor="note">Note:</label>
-                    <textarea id="note" value={this.props.data.note} onChange={this.props.handleChange} required ></textarea>
+                    <textarea id="note" value={this.state.note} onChange={this.handleChange} required ></textarea>
                 </div>
                 <div>
                     <input type="submit" value="Add New Note" />
@@ -49,21 +154,70 @@ class NewEntryForm extends React.Component {
 }
 
 class EditEntryForm extends React.Component {
+    state = {
+        comments: this.props.data.comments,
+        title: this.props.data.title,
+        videoId: this.props.commentsId,
+        date: this.props.data.date,
+        note: this.props.data.note,
+    }
+
+    handleEdit = (event) => {
+        this.setState({ [event.target.id]: event.target.value });
+    }
+
+    updateComment = (comment) => {
+        event.preventDefault();
+        comment.editing = !comment.editing;
+        console.log(comment.editing);
+        fetch("/youtube/" + comment._id, {
+            body: JSON.stringify({
+                title: this.state.title,
+                videoID: this.state.videoId,
+                date: this.state.date,
+                note: this.state.note,
+                editing: comment.editing
+            }),
+                method: 'PUT',
+                headers: {
+                    Accept: 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json'
+                }
+        })
+        .then((updateComment) => updateComment.json())
+        .then((JComment) => {
+            fetch("/youtube").then((response) => response.json()).then((comments) => {
+                this.setState({
+                    comments: comments,
+                    editing: false
+                });
+            });
+        });
+    }
+
+
     render() {
         return(
-            <form>
+            <form onSubmit={() => {
+                {this.updateComment(this.props.data)}
+            }}>
                 <div>
                     <h3>Edit Entry</h3>
                     <label htmlFor="title">Title</label>
-                    <input type="text" id="title" value="" />
+                    <h3>{this.state.title}</h3>
+                    <input type="text" id="title" value={this.state.title}  onChange={this.handleEdit} required />
                 </div>
                 <div>
+                <div>
+                    <label htmlFor="videoId" />
+                    <input type="hidden" id="videoId" value={this.state.videoId} />
+                </div>
                     <label htmlFor="date">Date</label>
-                    <input type="date" id="date" value="" />
+                    <input type="date" id="date" value={this.state.date}  onChange={this.handleEdit} required />
                 </div>
                 <div>
-                    <label htmlFor="body">Note:</label>
-                    <textarea id="body" value=""></textarea>
+                    <label htmlFor="note">Note:</label>
+                    <textarea id="note" value={this.state.note}  onChange={this.handleEdit} required ></textarea>
                 </div>
                 <div>
                     <input type="submit" value="Edit Note" />
@@ -77,10 +231,10 @@ class Comments extends React.Component {
     state = {
         comments: [],
         title: "",
-        videoId: this.props.commentsId,
+        videoId: "",
         date: "",
         note: "",
-        editing: false
+        commentsId: this.props.commentsId
     }
 
     componentDidMount() {
@@ -94,40 +248,6 @@ class Comments extends React.Component {
         );
     }
 
-handleChange = (event) => {
-    this.setState({ 
-        [event.target.id]: event.target.value
-    });
-}
-
-handleSubmit = (event) => {
-    event.preventDefault();
-    fetch("/youtube", {
-        body: JSON.stringify({ 
-            title: this.state.title,
-            videoId: this.state.videoId,
-            date: this.state.date,
-            note: this.state.note
-            }),
-			method: 'POST',
-			headers: {
-				Accept: 'application/json, text/plain, */*',
-                'Content-Type': 'application/json'
-            }
-        })
-        .then((createdComment) => {
-            return createdComment.json();
-        })
-        .then((comment) => {
-            this.setState({
-                title: "",
-                date: "",
-                note: "",
-                comments: [comment, ... this.state.comments]
-            });
-        })
-        .catch(error => console.log(error));
-}
 
 deleteComment = (id, index) => {
     fetch("/youtube/" + id, {
@@ -142,29 +262,41 @@ deleteComment = (id, index) => {
     });
 }
 
-toggleEditing = (comment, i) => {
-    this.setState({ editing: !this.state.editing });
-}
 
-updateComment = (comment, index) => {
-    comment.editing = !comment.editing;
-    console.log(comment.editing);
-}
+// updateComment = (comment, index) => {
+//     event.preventDefault();
+//     console.log(comment);
+//     console.log(comment._id);
+//     fetch("/youtube/" + comment._id, {
+//         body: JSON.stringify({
+//             title: comment.title,
+//             date: comment.date,
+//             note: comment.note
+//         }),
+// 			method: 'PUT',
+// 			headers: {
+// 				"Accept": 'application/json, text/plain, */*',
+// 				'Content-Type': 'application/json'
+// 			}
+//     })
+//     .then((updateComment) => updateComment.json())
+//     .then((JComment) => {
+//         fetch("/youtube").then((response) => response.json()).then((comments) => {
+//             this.setState({
+//                 editing: false,
+//                 comments: comments
+//             });
+//         });
+//     });
+// }
     
     render() {
         return (
             <React.Fragment>
                 <h3>Comments</h3>
-                <h4>{this.state.videoId}</h4>
-                <NewEntryForm data={this.state} handleChange={this.handleChange}  handleSubmit={this.handleSubmit} />
-
-
-                {/* <EditEntryForm /> */}
-                {/* <MainComment data={this.state} deleteComment={this.deleteComment}  toggleEditing={this.toggleEditing}/> */}
-
-                <button onClick={this.toggleEditing}>Edit</button>
-                        {this.state.editing ? <EditEntryForm /> : <MainComment  data={this.state}/>}
-
+                {/* <h3>/////// commentsID: {this.state.commentsId} ////////</h3> */}
+                <NewEntryForm data={this.state} commentsId={this.state.commentsId} />
+                <CommentBody  data={this.state} commentsId={this.state.commentsId} deleteComment={this.deleteComment} />
             </React.Fragment>
         )
     }
