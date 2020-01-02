@@ -261,34 +261,6 @@ deleteComment = (id, index) => {
         })
     });
 }
-
-
-// updateComment = (comment, index) => {
-//     event.preventDefault();
-//     console.log(comment);
-//     console.log(comment._id);
-//     fetch("/youtube/" + comment._id, {
-//         body: JSON.stringify({
-//             title: comment.title,
-//             date: comment.date,
-//             note: comment.note
-//         }),
-// 			method: 'PUT',
-// 			headers: {
-// 				"Accept": 'application/json, text/plain, */*',
-// 				'Content-Type': 'application/json'
-// 			}
-//     })
-//     .then((updateComment) => updateComment.json())
-//     .then((JComment) => {
-//         fetch("/youtube").then((response) => response.json()).then((comments) => {
-//             this.setState({
-//                 editing: false,
-//                 comments: comments
-//             });
-//         });
-//     });
-// }
     
     render() {
         return (
