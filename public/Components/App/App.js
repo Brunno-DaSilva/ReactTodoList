@@ -17,27 +17,28 @@ class App extends React.Component {
         <div>
           <div className="cards-container">
             <NavLink className="cards" to="/htmlCss">
-              HTML & CSS
+              <i class="fab fa-html5 fa-5x"></i>
+              <i class="fab fa-css3 fa-5x"></i>
             </NavLink>
 
             <NavLink className="cards" to="/javaScript">
-              JavaScript
+              <i class="fab fa-js-square fa-5x"></i>
             </NavLink>
 
             <NavLink className="cards" to="/reactPlayList">
-              React
+              <i class="fab fa-react fa-5x"></i>
             </NavLink>
             <NavLink className="cards" to="/jQueryPlayList">
               jQuery
             </NavLink>
             <NavLink className="cards" to="/node">
-              Node
+              <i class="fab fa-node-js fa-5x"></i>
             </NavLink>
             <NavLink className="cards" to="/phpList">
-              PHP
+              <i class="fab fa-js-square fa-5x"></i>
             </NavLink>
             <NavLink className="cards" to="/python">
-              Python
+              <i class="fab fa-python fa-5x"></i>
             </NavLink>
             <NavLink className="cards" to="/codeInterview">
               Code Interview
