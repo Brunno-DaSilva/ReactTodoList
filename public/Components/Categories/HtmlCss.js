@@ -45,25 +45,24 @@ class HtmlCss extends React.Component {
     console.log(this.state.videoIds);
     return (
       <React.Fragment>
-        <div>
+        <div className="frames-container">
           {this.state.videoIds.map((link, index) => {
             let frame = (
-              <div>
+              <div className="frame-wrapper">
                 <iframe
-                  width="560"
-                  height="315"
                   src={link}
                   frameborder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen
                 ></iframe>
+              <p>notes?</p>
               </div>
             );
             return frame;
           })}
         </div>
 
-        <div>{this.frame}</div>
+        <div className="frame-3">{this.frame}</div>
 
         <Comments />
       </React.Fragment>
