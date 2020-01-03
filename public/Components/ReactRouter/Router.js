@@ -20,6 +20,7 @@ class YouTubeRouter extends React.Component {
         <Route path="/python" component={Python} />
         <Route path="/codeInterview" component={CodeInterview} />
         <Route path="/comments" component={Comments} />
+        <Footer />
       </HashRouter>
     );
   }

@@ -1,6 +1,6 @@
 /*Style CSS*/
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 @import url("https://fonts.googleapis.com/css?family=Paytone+One&display=swap");
-/* @import url("https://fonts.googleapis.com/css?family=Montserrat"); */
 /* https://coolors.co/124e78-0b132b-1c2541-5bc0be-6fffe9 */
 
 * {
@@ -20,14 +20,15 @@
 } */
 
 body {
-  /* font-family: "Montserrat", sans-serif; */
+  font-family: "Montserrat", sans-serif;
   font-family: 'Paytone One', sans-serif;
-  background: linear-gradient(to right, #283E51, #4B79A1);
+  background-image: linear-gradient(to right, #283E51, #4B79A1);
   min-height: 100vh;
   width: 100vw;
 }
 
 .container {
+  width: 100vw;
   height: 100%;
   min-height: 120%;
   display: flex;
