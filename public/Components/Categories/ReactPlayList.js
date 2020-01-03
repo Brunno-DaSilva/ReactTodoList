@@ -43,10 +43,10 @@ class ReactPlayList extends React.Component {
     console.log(this.state.videoIds);
     return (
       <React.Fragment>
-        <div>
+        <div className="frames-container">
           {this.state.videoIds.map((link, index) => {
             let frame = (
-              <div>
+              <div className="frame-wrapper">
                 <iframe
                   width="560"
                   height="315"
