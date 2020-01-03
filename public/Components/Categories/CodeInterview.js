@@ -17,6 +17,7 @@ class CodeInterview extends React.Component {
     this.setState({ [event.target.id]: event.target.value });
   };
 
+  //ComponentWillMount executes on page load, so the user wont have to click a btn to load the videos
   componentWillMount = () => {
     let finalURL =
       this.state.baseURL +

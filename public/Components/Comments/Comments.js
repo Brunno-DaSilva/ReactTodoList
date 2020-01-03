@@ -1,5 +1,7 @@
 // console.log("Hello from comments!");
 
+//Comments holds user notes during a video execution
+
 class CommentBody extends React.Component {
   render() {
     return (
