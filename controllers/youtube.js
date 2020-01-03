@@ -8,7 +8,9 @@ router.get("/", (req, res) => {
     if (err) {
       res.send(err.message);
     } else {
-      res.json(foundComments);
+      console.log('getting...');
+      console.log(res.json(foundComments))
+      // res.json(foundComments);
     }
   });
 });

@@ -1,5 +1,6 @@
 /*Style CSS*/
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Paytone+One&display=swap");
 /* https://coolors.co/124e78-0b132b-1c2541-5bc0be-6fffe9 */
 
@@ -83,7 +84,7 @@ body {
   background-color: #e8ce74;
 }
 .javaScript:hover {
-  background-color: #ba2b24;
+  background-color: #C45650;
 }
 .reactPlaylist:hover {
   background-color: #d38a2c;
@@ -101,7 +102,7 @@ body {
   background-color: #72a378;
 }
 .codeInterview:hover {
-  background-color: #E9CE2C;
+  background-color: #D0E08F;
 }
 .search-box {
   display: flex;

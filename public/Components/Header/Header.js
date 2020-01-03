@@ -16,6 +16,7 @@ class Header extends React.Component {
           </NavLink>
         </nav>
         <br />
+        <h1>What do you want to learn?</h1>
       </div>
     );
   }

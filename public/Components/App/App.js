@@ -1,9 +1,12 @@
 console.log("Ciao React Junkies");
 
+const { TransitionGroup, CSSTransition } = ReactTransitionGroup;
+
 class App extends React.Component {
   render() {
     return (
-      <React.Fragment>
+      <TransitionGroup
+      >
         <div>
           <div className="cards-container">
             <NavLink className="cards htmlCss" to="/htmlCss">
@@ -51,7 +54,7 @@ class App extends React.Component {
           </div>
           <br />
         </div>
-      </React.Fragment>
+      </TransitionGroup>
     );
   }
 }

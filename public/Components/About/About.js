@@ -9,7 +9,7 @@ class About extends React.Component {
         <br />
         <br />
         <br />
-        <Notes />
+        {/* <Notes /> */}
 
         <br />
         <br />
