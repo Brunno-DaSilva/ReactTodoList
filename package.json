@@ -20,6 +20,6 @@
   "homepage": "https://github.com/carol-en/youtube-api#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.8.3"
+    "mongoose": "^5.8.4"
   }
 }
