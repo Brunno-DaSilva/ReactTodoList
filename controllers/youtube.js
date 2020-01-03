@@ -4,7 +4,6 @@ const YTComments  = require("../models/youtube.js");
 
 // Index Route
 router.get("/", (req, res) => {
-  res.send("Index");
   YTComments.find({}, (err, foundComments) => {
     if (err) {
       res.send(err.message);

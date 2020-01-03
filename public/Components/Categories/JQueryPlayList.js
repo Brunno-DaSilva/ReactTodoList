@@ -17,45 +17,32 @@ class JQueryPlayList extends React.Component {
     this.setState({ [event.target.id]: event.target.value });
   };
 
-  handleClick = event => {
-    event.preventDefault();
-    this.setState(
-      {
-        finalURL:
-          this.state.baseURL +
-          this.state.part +
-          this.state.maxResults +
-          this.state.playlistId +
-          this.state.apikey
-      },
-      () => {
-        fetch(this.state.finalURL)
-          .then(response => response.json())
-          .then(responseJson => {
-            console.log(responseJson);
-            const videoIds = responseJson.items.map(
-              obj =>
-                "https://www.youtube.com/embed/" +
-                obj.snippet.resourceId.videoId
-            );
-            this.setState({ videoIds });
-          })
-          .catch(error => {
-            console.error(error);
-          });
-      }
-    );
-  };
+  componentWillMount = () => {
+    let finalURL =
+      this.state.baseURL +
+      this.state.part +
+      this.state.maxResults +
+      this.state.playlistId +
+      this.state.apikey;
 
+    fetch(finalURL)
+      .then(response => response.json())
+      .then(responseJson => {
+        console.log(responseJson);
+        const videoIds = responseJson.items.map(
+          obj =>
+            "https://www.youtube.com/embed/" + obj.snippet.resourceId.videoId
+        );
+        this.setState({ videoIds });
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
   render() {
     console.log(this.state.videoIds);
     return (
       <React.Fragment>
-        <div>
-          <button className="cards" onClick={this.handleClick}>
-            jQuery
-          </button>
-        </div>
         <div>
           {this.state.videoIds.map((link, index) => {
             let frame = (
@@ -75,6 +62,7 @@ class JQueryPlayList extends React.Component {
         </div>
 
         <div>{this.frame}</div>
+        <Comments />
       </React.Fragment>
     );
   }

@@ -1,7 +1,7 @@
 // ===================
 // Dependencies
 // ===================
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3060;
 const express = require("express");
 const app = express();
 const mongoose = require("./db/connection.js");
