@@ -1,16 +1,6 @@
 console.log("Ciao React Junkies");
 
 class App extends React.Component {
-  state = {
-    baseURL: "https://www.googleapis.com/youtube/v3/playlistItems?part=",
-    part: "snippet" + "&",
-    maxResults: "maxResults=5" + "&",
-    playlistId: "playlistId=" + "PLWKjhJtqVAblv09G3sFgRMSeR0jnKQmJ9",
-    apikey: "&key=" + "AIzaSyCIETFoL5hBS644jAwQ7vx_79ogETBt4nE",
-    videoIds: [],
-    finalURL: ""
-  };
-
   render() {
     return (
       <React.Fragment>
@@ -60,26 +50,6 @@ class App extends React.Component {
           </div>
           <br />
         </div>
-
-        <div>
-          {this.state.videoIds.map((link, index) => {
-            let frame = (
-              <div>
-                <iframe
-                  width="560"
-                  height="315"
-                  src={link}
-                  frameborder="0"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </div>
-            );
-            return frame;
-          })}
-        </div>
-
-        <div>{this.frame}</div>
       </React.Fragment>
     );
   }
