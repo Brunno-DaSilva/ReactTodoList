@@ -1,0 +1,123 @@
+/*Style CSS*/
+@import url("https://fonts.googleapis.com/css?family=Paytone+One&display=swap");
+/* @import url("https://fonts.googleapis.com/css?family=Montserrat"); */
+/* https://coolors.co/124e78-0b132b-1c2541-5bc0be-6fffe9 */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* :root {
+  --dark-grey: #383838;
+  --light-yellow-bg: #fbe8b3;
+  --dark-blue: #264caa;
+  --yankees-blue: #58aae7;
+  --sea-serpent: #8cd6f4;
+  --aquamarine: #c1ecf8;
+  --react: #dde9f7;
+  --white-bg: #fcfcfc;
+} */
+
+body {
+  /* font-family: "Montserrat", sans-serif; */
+  font-family: 'Paytone One', sans-serif;
+  background: linear-gradient(to right, #283E51, #4B79A1);
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  height: 100%;
+  min-height: 120%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+/* h2 {
+  color: var(--yankees-blue);
+  margin-bottom: 10%;
+  font-size: 5.1rem;
+  font-weight: 600;
+  letter-spacing: 15px;
+} */
+
+.cards-container {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.cards {
+  background-color: #edf0f0;
+  border: none;
+  color: #323330;
+  text-decoration: none;
+  margin: 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  /* margin-left: 10%; */
+  width: 425px;
+  height: 225px;
+  /* font-size: 1.5rem; */
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.cards h1 {
+  font-size: 4rem;
+}
+.cards:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  width: 440px;
+  height: 240px;
+  margin: 5px;
+}
+.htmlCss:hover {
+  background-color: #e8ce74;
+}
+.javaScript:hover {
+  background-color: #ba2b24;
+}
+.reactPlaylist:hover {
+  background-color: #d38a2c;
+}
+.jQueryPlayList:hover {
+  background-color: #94BEE8;
+}
+.node:hover {
+  background-color: #F2AEC6;
+}
+.phpList:hover {
+  background-color: #9265BF;
+}
+.python:hover {
+  background-color: #72a378;
+}
+.codeInterview:hover {
+  background-color: #E9CE2C;
+}
+.search-box {
+  display: flex;
+  width: 450px;
+  border: none;
+  position: relative;
+  height: 60px;
+  background: var(--dark-blue);
+  border-radius: 5px;
+  box-shadow: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: text;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+}
