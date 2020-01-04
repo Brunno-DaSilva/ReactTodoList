@@ -301,6 +301,28 @@ class EditEntryForm extends React.Component {
 }
 
 class Comments extends React.Component {
+<<<<<<< HEAD
+    
+    state = {
+        comments: [],
+        title: "",
+        videoId: "",
+        date: "",
+        note: "",
+        commentsId: this.props.commentsId
+    }
+
+    componentDidMount() {
+        fetch("/youtube")
+        .then(res => res.json())
+        .then(comments =>
+            // console.log("then " + comments)
+            this.setState({
+                comments: comments
+            })
+        );
+    }
+=======
   state = {
     comments: [],
     title: "",
@@ -309,6 +331,7 @@ class Comments extends React.Component {
     note: "",
     commentsId: this.props.commentsId
   };
+>>>>>>> 9aea39ef2d82695e116c7675dd4c58b0babea8b8
 
   componentDidMount() {
     fetch("/youtube")
@@ -332,6 +355,23 @@ class Comments extends React.Component {
         ]
       });
     });
+<<<<<<< HEAD
+}
+
+    render() {
+        console.log(this.props.commentsId);
+        return (
+            <React.Fragment>
+                <h3>Comments</h3>
+                {/* <h2>{this.props.commentsId[0]}</h2> */}
+                {/* <h3>/////// commentsID: {this.state.commentsId} ////////</h3> */}
+                <NewEntryForm data={this.state} commentsId={this.state.commentsId} />
+                <CommentBody  data={this.state} commentsId={this.state.commentsId} deleteComment={this.deleteComment} />
+            </React.Fragment>
+        )
+    }
+}
+=======
   };
 
   render() {
@@ -349,3 +389,4 @@ class Comments extends React.Component {
     );
   }
 }
+>>>>>>> 9aea39ef2d82695e116c7675dd4c58b0babea8b8
