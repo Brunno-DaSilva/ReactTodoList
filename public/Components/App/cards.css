@@ -7,7 +7,7 @@
 }
 .cards-enter {
     opacity: 0;
-    color: #323330;
+    color: #00000000;
     text-decoration: none;
     overflow: hidden;
 }
