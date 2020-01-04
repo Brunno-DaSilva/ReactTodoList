@@ -35,26 +35,26 @@
   margin: 5px;
 }
 .htmlCss:hover {
-  background-color: #e8ce74;
+  background-color: var(--htmlCss);
 }
 .javaScript:hover {
-  background-color: #C45650;
+  background-color: var(--javascript);
 }
 .reactPlaylist:hover {
-  background-color: #d38a2c;
+  background-color: var(--react);
 }
 .jQueryPlayList:hover {
-  background-color: #94BEE8;
+  background-color: var(--jquery);
 }
 .node:hover {
-  background-color: #F2AEC6;
+  background-color: var(--node);
 }
 .phpList:hover {
-  background-color: #9265BF;
+  background-color: var(--php);
 }
 .python:hover {
-  background-color: #72a378;
+  background-color: var(--python);
 }
 .codeInterview:hover {
-  background-color: #D0E08F;
+  background-color: var(--interview);
 }

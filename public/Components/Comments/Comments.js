@@ -337,14 +337,16 @@ class Comments extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <h3>Comments</h3>
-        {/* <h3>/////// commentsID: {this.state.commentsId} ////////</h3> */}
-        <NewEntryForm data={this.state} commentsId={this.state.commentsId} />
-        <CommentBody
-          data={this.state}
-          commentsId={this.state.commentsId}
-          deleteComment={this.deleteComment}
-        />
+        <div className='comments'>
+          <h3>Comments</h3>
+          {/* <h3>/////// commentsID: {this.state.commentsId} ////////</h3> */}
+          <NewEntryForm data={this.state} commentsId={this.state.commentsId} />
+          <CommentBody
+            data={this.state}
+            commentsId={this.state.commentsId}
+            deleteComment={this.deleteComment}
+          />
+        </div>
       </React.Fragment>
     );
   }

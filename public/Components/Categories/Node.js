@@ -47,7 +47,7 @@ class Node extends React.Component {
         <div className="frames-container">
           {this.state.videoIds.map((link, index) => {
             let frame = (
-              <div className="frame-wrapper">
+              <div className="frame-wrapper node">
                 <iframe
                   src={link}
                   frameborder="0"

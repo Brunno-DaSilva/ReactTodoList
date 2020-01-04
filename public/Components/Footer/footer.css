@@ -21,12 +21,12 @@
 }
 .info-Carol,
 .info-Bruno {
-  border-right: 2px solid #4B79A1;
+  border-right: 2px solid var(--gradient2);
 }
 .info-Carol p,
 .info-Bruno p,
 .info-John p {
-  color: #f3f2f2;
+  color: var(--offwhite);
   font-size: 1.8rem;
   padding: 10px;
 }
@@ -34,12 +34,12 @@
 .info-Carol a,
 .info-Bruno a,
 .info-John a {
-  color: #f3f2f2;
+  color: var(--offwhite);
   padding: 10px;
 }
 
 .info-Carol a:hover,
 .info-Bruno a:hover,
 .info-John a:hover {
-  color: #f3564b;
+  color: var(--highlight);
 }

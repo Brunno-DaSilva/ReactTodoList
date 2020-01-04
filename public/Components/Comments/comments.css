@@ -1,3 +1,40 @@
+.comments {
+  display: flex;
+  background-color: var(--background1);
+  border-radius: 10px;
+  color: var(--offwhite);
+  padding: 20px;
+  margin: 20px;
+  width: 50vw;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.comments input {
+  margin: 10px;
+}
+.comments label {
+  margin: 10px;
+  padding: 10px;
+}
+.comments li {
+  margin: 10px;
+  padding: 10px;
+}
+
 form {
   display: block;
+  margin: 10px;
+  padding: 10px;
+}
+.comments button {
+  font-family: "Montserrat", sans-serif;
+  font-family: 'Paytone One', sans-serif;
+  width: 75px;
+  height:35px;
+  text-decoration:none;
+  padding: 5px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--gradient2);
+  color: var(--offwhite);
 }
