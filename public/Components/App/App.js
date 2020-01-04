@@ -2,43 +2,43 @@ console.log("Ciao React Junkies");
 const { CSSTransition } = ReactTransitionGroup;
 
 const categories = [
-  { name: 'HTML / CSS', path: 'htmlCss',         icon: 'fab fa-html5 fa-2x'},
-  { name: 'JavaScript', path: 'javaScript',      icon: 'fab fa-js-square fa-2x'},
-  { name: 'React',      path: 'reactPlaylist',   icon: 'fab fa-react fa-2x'},
-  { name: 'jQuery',     path: 'jQueryPlayList',  icon: 'fa fa-wifi fa-2x'},
-  { name: 'Node.js',    path: 'node',            icon: 'fab fa-php fa-2x'},
-  { name: 'PHP',        path: 'phpList',         icon: 'fab fa-python fa-2x'},
-  { name: 'Python',     path: 'python',          icon: 'fab fa-python fa-2x'},
-  { name: 'Interviews', path: 'codeInterview',   icon: 'fa fa-handshake fa-2x'},
+  { name: 'HTML / CSS', path: 'htmlCss', icon: 'fab fa-html5 fa-2x' },
+  { name: 'JavaScript', path: 'javaScript', icon: 'fab fa-js-square fa-2x' },
+  { name: 'React', path: 'reactPlaylist', icon: 'fab fa-react fa-2x' },
+  { name: 'jQuery', path: 'jQueryPlayList', icon: 'fa fa-wifi fa-2x' },
+  { name: 'Node.js', path: 'node', icon: 'fab fa-node-js fa-2x' },
+  { name: 'PHP', path: 'phpList', icon: 'fab fa-php fa-2x' },
+  { name: 'Python', path: 'python', icon: 'fab fa-python fa-2x' },
+  { name: 'Interviews', path: 'codeInterview', icon: 'fa fa-handshake fa-2x' },
 ];
 
 class App extends React.Component {
-  state={}
+  state = {}
   render() {
     const allCategories = categories.map((category) => {
-      return(
+      return (
         <CSSTransition
-          in={ true }
-          timeout={ 500 }
+          in={true}
+          timeout={500}
           classNames="cards"
           mountOnEnter={false}
         >
           <NavLink
-            className={ `${category.path}` }
-            to={ `/${category.path}` }
+            className={`${category.path}`}
+            to={`/${category.path}`}
           >
-            { category.name }
-            <br/>
-            <i className={ category.icon }></i>
+            {category.name}
+            <br />
+            <i className={category.icon}></i>
           </NavLink>
         </CSSTransition>
       );
     });
-      
+
     return (
-        <div className="cards-container">
-          { allCategories }
-        </div>
+      <div className="cards-container">
+        {allCategories}
+      </div>
     );
   }
 }
