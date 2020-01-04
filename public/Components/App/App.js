@@ -19,14 +19,15 @@ class App extends React.Component {
       return(
         <CSSTransition
           in={ true }
-          timeout={ 10000 }
+          timeout={ 300 }
           classNames="cards"
+          mountOnEnter
         >
           <NavLink
             className={ `${category.path}` }
             to={ `/${category.path}` }
           >
-                <h2>{ category.name }</h2>
+            { category.name }
           </NavLink>
         </CSSTransition>
       );
