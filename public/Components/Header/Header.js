@@ -3,7 +3,7 @@ const { NavLink } = ReactRouterDOM;
 class Header extends React.Component {
   render() {
     return (
-      <div>
+      <div className="header">
         <nav className="nav-bar">
           <NavLink className="nav-bar" to="/youtubeList">
             YouTube List
@@ -11,11 +11,9 @@ class Header extends React.Component {
           <NavLink className="nav-bar" to="/about">
             About
           </NavLink>
-          <NavLink className="nav-bar" to="/contact">
-            Contact
-          </NavLink>
         </nav>
         <br />
+        <h1>What do you want to learn?</h1>
       </div>
     );
   }

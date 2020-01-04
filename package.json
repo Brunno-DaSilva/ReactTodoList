@@ -21,7 +21,13 @@
   "homepage": "https://github.com/carol-en/youtube-api#readme",
   "dependencies": {
     "express": "^4.17.1",
+<<<<<<< HEAD
     "firebase": "^7.6.1",
     "mongoose": "^5.8.3"
+=======
+    "mongoose": "^5.8.4",
+    "react-addons-transition-group": "^15.6.2",
+    "react-transition-group": "^1.2.1"
+>>>>>>> 563d3d5846701724ab825a41d29540e96005be82
   }
 }

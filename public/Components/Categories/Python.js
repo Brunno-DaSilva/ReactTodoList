@@ -44,13 +44,11 @@ class Python extends React.Component {
     console.log(this.state.videoIds);
     return (
       <React.Fragment>
-        <div>
+        <div className="frames-container">
           {this.state.videoIds.map((link, index) => {
             let frame = (
-              <div>
+              <div className="frame-wrapper python">
                 <iframe
-                  width="560"
-                  height="315"
                   src={link}
                   frameborder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
