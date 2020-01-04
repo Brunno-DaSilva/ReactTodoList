@@ -12,7 +12,7 @@ class Footer extends React.Component {
           <a href="https://www.linkedin.com/in/carolinenolasco/" target="_blank">
             <i class="fab fa-linkedin fa-2x"></i>
           </a>
-          <a href="#" target="_blank">
+          <a href="http://carolinenolasco.com" target="_blank">
             <i class="fas fa-globe fa-2x"></i>
           </a>
         </div>
