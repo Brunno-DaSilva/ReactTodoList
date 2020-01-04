@@ -32,4 +32,4 @@ Caroline is a front end developer with a passion for design, art, and coding who
 ### Featured Channel
 
 - ### [Travery Media](https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA)  
-- ### [Free CodeCamp] (https://www.youtube.com/embed/PLWKjhJtqVAblv09G3sFgRMSeR0jnKQmJ9)
+- ### [Free CodeCamp](https://www.youtube.com/embed/PLWKjhJtqVAblv09G3sFgRMSeR0jnKQmJ9)
