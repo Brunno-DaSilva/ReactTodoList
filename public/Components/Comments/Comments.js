@@ -73,6 +73,8 @@ class CommentData extends React.Component {
         return(
             <React.Fragment>
                     <h1>{this.props.comment.title}</h1>
+                    <h4>Props.commentsId: {this.props.commentsId}</h4>
+                    <h4>Props.comment.commentsId: {this.props.comment.commentsId}</h4>
                     <h4>{this.props.comment.date}</h4>
                     <div>{this.props.comment.note}</div>
             </React.Fragment>
@@ -228,6 +230,7 @@ class EditEntryForm extends React.Component {
 }
 
 class Comments extends React.Component {
+    
     state = {
         comments: [],
         title: "",
@@ -262,38 +265,12 @@ deleteComment = (id, index) => {
     });
 }
 
-
-// updateComment = (comment, index) => {
-//     event.preventDefault();
-//     console.log(comment);
-//     console.log(comment._id);
-//     fetch("/youtube/" + comment._id, {
-//         body: JSON.stringify({
-//             title: comment.title,
-//             date: comment.date,
-//             note: comment.note
-//         }),
-// 			method: 'PUT',
-// 			headers: {
-// 				"Accept": 'application/json, text/plain, */*',
-// 				'Content-Type': 'application/json'
-// 			}
-//     })
-//     .then((updateComment) => updateComment.json())
-//     .then((JComment) => {
-//         fetch("/youtube").then((response) => response.json()).then((comments) => {
-//             this.setState({
-//                 editing: false,
-//                 comments: comments
-//             });
-//         });
-//     });
-// }
-    
     render() {
+        console.log(this.props.commentsId);
         return (
             <React.Fragment>
                 <h3>Comments</h3>
+                {/* <h2>{this.props.commentsId[0]}</h2> */}
                 {/* <h3>/////// commentsID: {this.state.commentsId} ////////</h3> */}
                 <NewEntryForm data={this.state} commentsId={this.state.commentsId} />
                 <CommentBody  data={this.state} commentsId={this.state.commentsId} deleteComment={this.deleteComment} />
