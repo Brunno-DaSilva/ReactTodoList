@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "seed": "node ./db/seed.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,9 @@
   "homepage": "https://github.com/carol-en/youtube-api#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.8.3"
+    "firebase": "^7.6.1",
+    "mongoose": "^5.8.3",
+    "react-addons-transition-group": "^15.6.2",
+    "react-transition-group": "^1.2.1"
   }
 }

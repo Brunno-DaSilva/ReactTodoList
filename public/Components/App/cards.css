@@ -1,0 +1,69 @@
+.cards-container {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.cards-enter {
+    opacity: 0;
+    color: #00000000;
+    text-decoration: none;
+    overflow: hidden;
+}
+.cards-enter-active {
+    opacity: 1;
+    color: #323330;
+    text-decoration: none;
+    overflow: hidden;
+    transition: opacity 500ms "ease-in-out";
+}
+.cards-enter-done {
+  background-color: #edf0f0;
+  border: none;
+  color: #323330;
+  text-decoration: none;
+  margin: 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  /* margin-left: 10%; */
+  width: 425px;
+  height: 225px;
+  font-size: 3.5rem;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.cards-enter-done:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  width: 440px;
+  height: 240px;
+  margin: 5px;
+}
+.cards-exit {
+  background-color: cyan;
+}
+.htmlCss:hover {
+  background-color: var(--htmlCss);
+}
+.javaScript:hover {
+  background-color: var(--javascript);
+}
+.reactPlaylist:hover {
+  background-color: var(--react);
+}
+.jQueryPlayList:hover {
+  background-color: var(--jquery);
+}
+.node:hover {
+  background-color: var(--node);
+}
+.phpList:hover {
+  background-color: var(--php);
+}
+.python:hover {
+  background-color: var(--python);
+}
+.codeInterview:hover {
+  background-color: var(--interview);
+}

@@ -1,0 +1,114 @@
+:root {
+  --highlight: #f3564b;
+  --offwhite: #f3f2f2;
+  --background1: #383838;
+  --htmlCss: #e8ce74;
+  --javascript: #C45650;
+  --react: #d38a2c;
+  --jquery: #94BEE8;
+  --node: #F2AEC6;
+  --php: #9265BF;
+  --python: #72a378;
+  --interview: #D0E08F;
+  --gradient1: #283E51;
+  --gradient2: #4B79A1;
+}
+
+.comments {
+  display: flex;
+  background-color: var(--background1);
+  border-radius: 10px;
+  color: var(--offwhite);
+  padding: 20px;
+  margin: 20px;
+  width: 90vw;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.comments input {
+  margin: 10px;
+}
+.comments label {
+  margin: 10px;
+  padding: 10px;
+}
+.comments li {
+  margin: 10px;
+  padding: 10px;
+  list-style: none;
+}
+
+.comments h3{
+  letter-spacing: 3px;
+  font-size: 2rem;
+}
+
+form {
+  display: block;
+  margin: 10px;
+  padding: 10px;
+}
+.comments button {
+  font-family: "Montserrat", sans-serif;
+  font-family: 'Paytone One', sans-serif;
+  width: 75px;
+  height:35px;
+  text-decoration:none;
+  padding: 5px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--gradient2);
+  color: var(--offwhite);
+}
+
+
+/*************
+Style form 
+*************/
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  background-color: var(--gradient2);
+  color: var(--offwhite);
+  border: none;
+  color: var(--dark-blue);
+  padding: 8px 20px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 10%;
+  font-size: .8rem;
+}
+
+label {
+  color: var(--sea-serpent);
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+input[type="text"], input[type="date"]  {
+  width: 150px;
+  height: 45px;
+  border-radius: 5px;
+  border: none;
+  border-bottom: 1px solid #535353;
+  background-color: transparent;
+  color: var(--dark-blue)
+}
+
+textarea{
+  width: 500px;
+  height: 150px;
+  border-radius: 5px;
+  border: none;
+  border-bottom: 1px solid #535353;
+  background-color: #bab8b8;
+  color: var(--dark-blue)
+}

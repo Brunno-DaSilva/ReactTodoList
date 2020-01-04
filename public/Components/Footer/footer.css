@@ -1,0 +1,45 @@
+.footer-info {
+  font-family: 'Bebas Neue', cursive;
+  /* background-color: #383838; */
+  background: linear-gradient( #38383800, #383838);
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center !important;
+  align-items: center;
+  align-content: center;
+  overflow: hidden;
+}
+
+.info-Carol,
+.info-Bruno,
+.info-John {
+  width: 33%;
+  padding: 20px;
+  text-align: center;
+}
+.info-Carol,
+.info-Bruno {
+  border-right: 2px solid var(--gradient2);
+}
+.info-Carol p,
+.info-Bruno p,
+.info-John p {
+  color: var(--offwhite);
+  font-size: 1.8rem;
+  padding: 10px;
+}
+
+.info-Carol a,
+.info-Bruno a,
+.info-John a {
+  color: var(--offwhite);
+  padding: 10px;
+}
+
+.info-Carol a:hover,
+.info-Bruno a:hover,
+.info-John a:hover {
+  color: var(--highlight);
+}
