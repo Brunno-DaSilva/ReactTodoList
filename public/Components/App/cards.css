@@ -7,9 +7,15 @@
 }
 .cards-enter {
     opacity: 0;
+    color: #323330;
+    text-decoration: none;
+    overflow: hidden;
 }
 .cards-enter-active {
     opacity: 1;
+    color: #323330;
+    text-decoration: none;
+    overflow: hidden;
     transition: opacity 500ms "ease-in-out";
 }
 .cards-enter-done {
@@ -33,6 +39,9 @@
   width: 440px;
   height: 240px;
   margin: 5px;
+}
+.cards-exit {
+  background-color: cyan;
 }
 .htmlCss:hover {
   background-color: var(--htmlCss);

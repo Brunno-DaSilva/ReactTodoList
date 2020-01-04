@@ -2,14 +2,14 @@ console.log("Ciao React Junkies");
 const { CSSTransition } = ReactTransitionGroup;
 
 const categories = [
-  { name: 'HTML / CSS', path: 'htmlCss' },
-  { name: 'JavaScript', path: 'javaScript' },
-  { name: 'React',      path: 'reactPlaylist' },
-  { name: 'jQuery',     path: 'jQueryPlayList' },
-  { name: 'Node.js',    path: 'node' },
-  { name: 'PHP',        path: 'phpList' },
-  { name: 'Python',     path: 'python' },
-  { name: 'Interviews', path: 'codeInterview' },
+  { name: 'HTML / CSS', path: 'htmlCss',         icon: 'fab fa-html5 fa-2x'},
+  { name: 'JavaScript', path: 'javaScript',      icon: 'fab fa-js-square fa-2x'},
+  { name: 'React',      path: 'reactPlaylist',   icon: 'fab fa-react fa-2x'},
+  { name: 'jQuery',     path: 'jQueryPlayList',  icon: 'fa fa-wifi fa-2x'},
+  { name: 'Node.js',    path: 'node',            icon: 'fab fa-php fa-2x'},
+  { name: 'PHP',        path: 'phpList',         icon: 'fab fa-python fa-2x'},
+  { name: 'Python',     path: 'python',          icon: 'fab fa-python fa-2x'},
+  { name: 'Interviews', path: 'codeInterview',   icon: 'fa fa-handshake fa-2x'},
 ];
 
 class App extends React.Component {
@@ -19,15 +19,17 @@ class App extends React.Component {
       return(
         <CSSTransition
           in={ true }
-          timeout={ 300 }
+          timeout={ 500 }
           classNames="cards"
-          mountOnEnter
+          mountOnEnter={false}
         >
           <NavLink
             className={ `${category.path}` }
             to={ `/${category.path}` }
           >
             { category.name }
+            <br/>
+            <i className={ category.icon }></i>
           </NavLink>
         </CSSTransition>
       );
