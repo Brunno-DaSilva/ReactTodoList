@@ -1,0 +1,16 @@
+{
+  "name": "youtubeapp",
+  "version": "1.0.0",
+  "description": "This app was created by The React Junkies-- Bruno \"Baddy\" DaSilva, Caroline \"Catastrophe\" Nolasco, and John \"Juicy\" Martin. It was their first team-React-app-build together, but they seemed to have conquered it masterfully. This application is a learning web site for Web developers developed with React. It uses a Youtube API call to fetch and display Youtube web developer tutorials. The Learn by Youtube app featured courses like HTML&CSS, Javascript, NodeJS, ReactJS and much more.",
+  "main": "server.js",
+  "dependencies": {
+    "firebase": "^7.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,63 @@
+/*Style CSS*/
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Paytone+One&display=swap");
+/* https://coolors.co/124e78-0b132b-1c2541-5bc0be-6fffe9 */
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --highlight: #f3564b;
+  --offwhite: #f3f2f2;
+  --background1: #383838;
+  --htmlCss: #e8ce74;
+  --javascript: #C45650;
+  --react: #d38a2c;
+  --jquery: #94BEE8;
+  --node: #F2AEC6;
+  --php: #9265BF;
+  --python: #72a378;
+  --interview: #D0E08F;
+  --gradient1: #283E51;
+  --gradient2: #4B79A1;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-family: 'Paytone One', sans-serif;
+  background-image: linear-gradient(to right, var(--gradient1) , var(--gradient2));
+  min-height: 100vh;
+  width: 100vw;
+}
+.container {
+  width: 100vw;
+  height: 100%;
+  min-height: 120%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+/* not in use
+.search-box {
+  display: flex;
+  width: 450px;
+  border: none;
+  position: relative;
+  height: 60px;
+  background: var(--dark-blue);
+  border-radius: 5px;
+  box-shadow: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: text;
+} */
+
+form {
+  display: flex;
+  flex-direction: row;
+}
