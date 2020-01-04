@@ -64,12 +64,12 @@ class CommentContent extends React.Component {
               commentsId={this.props.commentsId}
             />
           ) : (
-            <EditEntryForm
-              data={this.props.data}
-              index={this.props.index}
-              commentsId={this.props.commentsId}
-            />
-          )}
+              <EditEntryForm
+                data={this.props.data}
+                index={this.props.index}
+                commentsId={this.props.commentsId}
+              />
+            )}
 
           <button
             onClick={() => {
@@ -171,12 +171,7 @@ class NewEntryForm extends React.Component {
             required
           />
         </div>
-        <div>
-          <label htmlFor="videoId" />
-          VideoId
-          <label />
-          <label id="videoId" value={this.state.videoId} />
-        </div>
+
         <div>
           <label htmlFor="date">Date</label>
           <input
@@ -196,6 +191,7 @@ class NewEntryForm extends React.Component {
             required
           ></textarea>
         </div>
+        <br />
         <div>
           <input type="submit" value="Add New Note" />
         </div>
@@ -338,7 +334,7 @@ class Comments extends React.Component {
     return (
       <React.Fragment>
         <div className='comments'>
-          <h3>Comments</h3>
+          <h3>Comments:</h3>
           {/* <h3>/////// commentsID: {this.state.commentsId} ////////</h3> */}
           <NewEntryForm data={this.state} commentsId={this.state.commentsId} />
           <CommentBody
