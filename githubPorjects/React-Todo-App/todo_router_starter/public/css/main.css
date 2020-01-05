@@ -1,0 +1,255 @@
+/*Style CSS*/
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+/* https://coolors.co/124e78-0b132b-1c2541-5bc0be-6fffe9 */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --light-yellow-bg: #a391b9;
+  --dark-blue: #4d5375;
+  --yankees-blue: #f6f4f2;
+  --sea-serpent: #ebe3e3;
+  --aquamarine: #6080a3;
+  --react: #c8b9d8;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: var(--light-yellow-bg);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  min-height: 100vh;
+  width: 100vw;
+
+}
+
+.container {
+  height: 50%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+}
+
+
+/*////////////////////
+//      Header  
+///////////////////*/
+
+.nav-container{
+  width: 100%; 
+}
+
+.nav-bar {
+  background-color: transparent;
+  border-bottom: 2px solid #6080a3;
+  color: var(--sea-serpent);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  min-width: 100%;
+  height: 11vh;
+  z-index: 11;
+  width: 100%;
+}
+
+.nav-bar img {
+  width: 30px;
+  height: auto;
+}
+
+.nav-bar .nav-item{
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  z-index: 11;
+}
+
+.nav-bar .nav-item:hover{
+  color: var(--aquamarine)
+}
+
+
+
+.header-ld {
+  height: 20% !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+h1,
+p {
+  color: var(--sea-serpent);
+}
+
+h2 {
+  color: var(--yankees-blue);
+  margin-bottom: 10%;
+  font-size: 5.1rem;
+  font-weight: 600;
+  letter-spacing: 15px;
+}
+.main-title {
+  padding: 20px;
+  text-align: center;
+}
+.main-title h1 {
+  font-size: 3rem;
+  color: var(--yankees-blue);
+}
+
+/*//////////////////////
+//      Table
+////////////////////*/
+.table-container {
+  background-color: var(--yankees-blue);
+  border-radius: 5px;
+  padding: 20px;
+  margin: 5%;
+}
+
+table {
+  font-family: "Montserrat", sans-serif;
+  border-collapse: collapse;
+  width: 100% !important;
+}
+
+th {
+  border-bottom: 1px solid #dddddd;
+  text-align: left;
+  padding: 10px;
+  color: var(--dark-blue);
+}
+
+td {
+  text-align: left;
+  padding: 10px;
+  color: var(--aquamarine);
+}
+tr :nth-child(3){
+  text-align: right;
+}
+
+/*/////////////////////
+//       Form 
+////////////////////*/
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  background-color: var(--sea-serpent);
+  border: none;
+  color: var(--dark-blue);
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 10%;
+  font-size: 1rem;
+}
+
+label {
+  color: var(--sea-serpent);
+  font-size: 2.3rem;
+  margin-right: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+}
+
+input[type="text"] {
+  width: 500px;
+  height: 45px;
+  border-radius: 5px;
+  border: none;
+  color: var(--dark-blue)
+}
+
+.complete {
+  color: var(--react);
+}
+
+td i{
+  color: #f77171; 
+}
+
+.description-display p i{
+  color: var(--sea-serpent) !important;
+}
+
+/*/////////////////////////////
+//        Footer                     
+/////////////////////////////*/
+svg {
+  margin-bottom: -35px;
+  z-index: 5;
+}
+
+footer {
+  width: 100vw;
+  color: var(--sea-serpent);
+  font-size: 1.3rem;
+  letter-spacing: 4px;
+  text-align: center;
+  margin-top: auto;
+  background-color: var(--dark-blue);
+  z-index: 6;
+  padding: 20px 1px;
+}
+
+footer img {
+  width: 90px;
+  height: auto;
+}
+
+.devp{
+  font-size: 1.2rem;
+}
+
+.info-Bruno {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+.info-Bruno {
+  border-right: 2px solid var(--yankees-blue);
+}
+
+.info-Bruno p{
+  color: var(--yankees-blue);
+  font-size: 1.8rem;
+  padding: 10px;
+}
+
+
+.info-Bruno a{
+  color: var(--yankees-blue);
+  padding: 10px;
+}
+
+
+.info-Bruno a:hover {
+  color: var(--react);
+}
