@@ -1,9 +1,9 @@
-# Full-Stack React Todo List
+# MERN - Full-Stack React Todo List
 
-This is a Full Stack Todo app made with: 
-
--ExpressServer
--MongoDB
--React
--ReactRouter
+##### This is a Full Stack Todo app made with: 
+      - MongoDB
+      - Express
+      - React
+      - NodeJs
+  
 
